@@ -1410,9 +1410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0c32765aa0fa94999b4183a10269d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  race: 0
+  race: 1
   allTerrain: 0
-  dirtnsnow: 1
+  dirtnsnow: 0
   wet: 0
   studded: 0
 --- !u!1 &5410747084619915203
@@ -1523,9 +1523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0c32765aa0fa94999b4183a10269d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  race: 0
+  race: 1
   allTerrain: 0
-  dirtnsnow: 1
+  dirtnsnow: 0
   wet: 0
   studded: 0
 --- !u!1 &5410747084734145114
@@ -1602,9 +1602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0c32765aa0fa94999b4183a10269d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  race: 0
+  race: 1
   allTerrain: 0
-  dirtnsnow: 1
+  dirtnsnow: 0
   wet: 0
   studded: 0
 --- !u!1 &5410747084835445732
@@ -1681,9 +1681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0c32765aa0fa94999b4183a10269d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  race: 0
+  race: 1
   allTerrain: 0
-  dirtnsnow: 1
+  dirtnsnow: 0
   wet: 0
   studded: 0
 --- !u!1 &5410747084867286451
@@ -1995,7 +1995,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: All Terrain
       m_Image: {fileID: 0}
-    - m_Text: Dirt n Snow
+    - m_Text: Dirt
       m_Image: {fileID: 0}
     - m_Text: Wet
       m_Image: {fileID: 0}
