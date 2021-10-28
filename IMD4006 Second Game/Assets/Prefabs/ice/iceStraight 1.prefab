@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8481723188433207483}
   m_Layer: 0
   m_Name: iceStraight 1
-  m_TagString: Track
+  m_TagString: ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

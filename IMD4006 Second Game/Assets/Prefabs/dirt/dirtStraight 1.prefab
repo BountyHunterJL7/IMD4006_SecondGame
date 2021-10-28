@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8481723188433207483}
   m_Layer: 0
   m_Name: dirtStraight 1
-  m_TagString: Track
+  m_TagString: dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,6 +393,10 @@ PrefabInstance:
     - target: {fileID: 816988071044264808, guid: 50721468a1c948f428b7d0d4e3719a77, type: 3}
       propertyPath: m_Name
       value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 816988071044264808, guid: 50721468a1c948f428b7d0d4e3719a77, type: 3}
+      propertyPath: m_TagString
+      value: terrain
       objectReference: {fileID: 0}
     - target: {fileID: 816988071044264812, guid: 50721468a1c948f428b7d0d4e3719a77, type: 3}
       propertyPath: m_RootOrder

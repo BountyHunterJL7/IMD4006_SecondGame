@@ -27,6 +27,7 @@ public class editTerrain : MonoBehaviour
             
         else if(Input.GetMouseButtonDown(2))
         {
+            
         }
             
     }

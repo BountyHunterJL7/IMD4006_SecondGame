@@ -10,6 +10,12 @@ TagManager:
   - roadTrack
   - dirtTrack
   - iceTrack
+  - asphault
+  - dirt
+  - ice
+  - wetTrack
+  - wet
+  - terrain
   layers:
   - Default
   - TransparentFX

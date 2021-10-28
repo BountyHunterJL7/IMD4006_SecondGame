@@ -34,13 +34,6 @@ public class vehicleController : MonoBehaviour
     private int currentPoint = 0;
     private bool avoid = false;
     private float targetAngle = 0;
-    
-    [Header("Tires")]
-    public bool race;
-    public bool allTerrain;
-    public bool dirtnsnow;
-    public bool wet;
-    public bool studded;
 
     private void Start (){
         rigidbody = GetComponent<Rigidbody>();
@@ -65,7 +58,6 @@ public class vehicleController : MonoBehaviour
         lerpSteerAngle();
         Braking();
         pause();
-        TireCheck();
     }
 
     private void pause() {
@@ -88,44 +80,6 @@ public class vehicleController : MonoBehaviour
         }
     }
 
-    private void TireCheck(){
-        if (race)
-        {
-            allTerrain = false;
-            dirtnsnow = false;
-            wet = false;
-            studded = false;
-        }
-        else if (allTerrain)
-        {
-            race = false;
-            dirtnsnow = false;
-            wet = false;
-            studded = false;
-        }
-        else if (dirtnsnow)
-        {
-            race = false;
-            allTerrain = false;
-            wet = false;
-            studded = false;
-        }
-        else if (wet)
-        {
-            race = false;
-            allTerrain = false;
-            dirtnsnow = false;
-            studded = false;
-        }
-        else if (studded)
-        {
-            race = false;
-            allTerrain = false;
-            dirtnsnow = false;
-            wet = false;
-        }
-    }
-
     private void SensorCheck() {
         RaycastHit hit;
         Vector3 sensorStartPos = transform.position;
@@ -136,7 +90,7 @@ public class vehicleController : MonoBehaviour
 
         sensorStartPos += transform.right * frontSideSensorPos;
         if (Physics.Raycast(sensorStartPos, transform.forward, out hit, sensorLength)) {
-            if (!hit.collider.CompareTag("Track")){
+            if (!hit.collider.CompareTag("terrain")){
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoid = true;
                 avoidLevel -= 1f;
@@ -145,7 +99,7 @@ public class vehicleController : MonoBehaviour
         
 
         else if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, sensorLength)) {
-            if (!hit.collider.CompareTag("Track")){
+            if (!hit.collider.CompareTag("terrain")){
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoid = true;
                 avoidLevel -= 0.5f;
@@ -155,7 +109,7 @@ public class vehicleController : MonoBehaviour
 
         sensorStartPos -= transform.right * frontSideSensorPos *2;
         if (Physics.Raycast(sensorStartPos, transform.forward, out hit, sensorLength)) {
-            if (!hit.collider.CompareTag("Track")){
+            if (!hit.collider.CompareTag("terrain")){
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoid = true;
                 avoidLevel += 1f;
@@ -164,7 +118,7 @@ public class vehicleController : MonoBehaviour
         
 
         else if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, sensorLength)) {
-            if (!hit.collider.CompareTag("Track")){
+            if (!hit.collider.CompareTag("terrain")){
                 Debug.DrawLine(sensorStartPos, hit.point);
                 avoid = true;
                 avoidLevel += 0.5f;
@@ -173,7 +127,7 @@ public class vehicleController : MonoBehaviour
 
         if (avoidLevel == 0){
             if (Physics.Raycast(sensorStartPos, transform.forward, out hit, sensorLength)) {
-                if (!hit.collider.CompareTag("Track")){
+                if (!hit.collider.CompareTag("terrain")){
                     Debug.DrawLine(sensorStartPos, hit.point);
                     avoid = true;
                     if (hit.normal.x< 0) {

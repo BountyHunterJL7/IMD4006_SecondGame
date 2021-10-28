@@ -12,6 +12,13 @@ public class PlaceTrack : MonoBehaviour
     public Transform trackC3;
     public Transform trackC4;
 
+    public Transform wetTrack;
+    public Transform wetTrack2;
+    public Transform wetTrackC1;
+    public Transform wetTrackC2;
+    public Transform wetTrackC3;
+    public Transform wetTrackC4;
+
     public Transform dirtTrack;
     public Transform dirtTrack2;
     public Transform dirtTrackC1;
@@ -27,9 +34,14 @@ public class PlaceTrack : MonoBehaviour
     public Transform iceTrackC4;
 
     public Transform startTrack;
+    public Transform car;
+    public Transform truck;
     
 
     public Transform onMousePrefab;
+
+    public int carSpawnNum=1;
+    public int truckSpawnNum=1;
 
     public Vector3 smoothMousePos;
     [SerializeField] private int height;
@@ -104,6 +116,38 @@ public class PlaceTrack : MonoBehaviour
         }
     }
 
+    //wet
+    public void OnMOuseClickOnUIw(){
+        if (onMousePrefab == null){
+            onMousePrefab = Instantiate(wetTrack, mousePosition, Quaternion.identity);
+        }
+    }
+    public void OnMOuseClickOnUIw2(){
+        if (onMousePrefab == null){
+            onMousePrefab = Instantiate(wetTrack2, mousePosition, Quaternion.identity);
+        }
+    }
+    public void OnMOuseClickOnUIwc1(){
+        if (onMousePrefab == null){
+            onMousePrefab = Instantiate(wetTrackC1, mousePosition, Quaternion.identity);
+        }
+    }
+    public void OnMOuseClickOnUIwc2(){
+        if (onMousePrefab == null){
+            onMousePrefab = Instantiate(wetTrackC2, mousePosition, Quaternion.identity);
+        }
+    }
+    public void OnMOuseClickOnUIwc3(){
+        if (onMousePrefab == null){
+            onMousePrefab = Instantiate(wetTrackC3, mousePosition, Quaternion.identity);
+        }
+    }
+    public void OnMOuseClickOnUIwc4(){
+        if (onMousePrefab == null){
+            onMousePrefab = Instantiate(wetTrackC4, mousePosition, Quaternion.identity);
+        }
+    }
+
     //dirt
     public void OnMOuseClickOnUId(){
         if (onMousePrefab == null){
@@ -173,6 +217,25 @@ public class PlaceTrack : MonoBehaviour
             onMousePrefab = Instantiate(startTrack, mousePosition, Quaternion.identity);
         }
     }
+
+    public void OnMOuseClickOnUIcar(){
+        if (carSpawnNum < 7){
+                onMousePrefab = Instantiate(car, GameObject.Find("spawn"+carSpawnNum).transform.position, Quaternion.identity);
+                carSpawnNum++;
+                onMousePrefab = null;
+        }
+        
+    }
+
+    public void OnMOuseClickOnUItruck(){
+        if(truckSpawnNum<7){
+                onMousePrefab = Instantiate(truck, GameObject.Find("truckSpawn"+truckSpawnNum).transform.position, Quaternion.identity);
+                truckSpawnNum++;
+                onMousePrefab = null;
+        }
+        
+    }
+
     
     private void CreateGrid() {
         nodes = new Node[width,height];

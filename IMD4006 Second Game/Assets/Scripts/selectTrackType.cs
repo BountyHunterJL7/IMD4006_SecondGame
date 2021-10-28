@@ -18,21 +18,31 @@ public class selectTrackType : MonoBehaviour
         GameObject[] thisObject;
         GameObject[] notThis1;
         GameObject[] notThis2;
+        GameObject[] notThis3;
             thisObject = GameObject.FindGameObjectsWithTag("roadTrack");
             notThis1 = GameObject.FindGameObjectsWithTag("dirtTrack");
             notThis2 = GameObject.FindGameObjectsWithTag("iceTrack");
+            notThis3 = GameObject.FindGameObjectsWithTag("wetTrack");
         if (yourButton.name == "roadButton"){
             thisObject = GameObject.FindGameObjectsWithTag("roadTrack");
             notThis1 = GameObject.FindGameObjectsWithTag("dirtTrack");
             notThis2 = GameObject.FindGameObjectsWithTag("iceTrack");
+            notThis3 = GameObject.FindGameObjectsWithTag("wetTrack");
+        } else if (yourButton.name == "wetButton"){
+            thisObject = GameObject.FindGameObjectsWithTag("wetTrack");
+            notThis1 = GameObject.FindGameObjectsWithTag("roadTrack");
+            notThis2 = GameObject.FindGameObjectsWithTag("iceTrack");
+            notThis3 = GameObject.FindGameObjectsWithTag("dirtTrack");
         } else if (yourButton.name == "dirtButton"){
             thisObject = GameObject.FindGameObjectsWithTag("dirtTrack");
             notThis1 = GameObject.FindGameObjectsWithTag("roadTrack");
             notThis2 = GameObject.FindGameObjectsWithTag("iceTrack");
+            notThis3 = GameObject.FindGameObjectsWithTag("wetTrack");
         } else if (yourButton.name == "iceButton"){
             thisObject = GameObject.FindGameObjectsWithTag("iceTrack");
             notThis1 = GameObject.FindGameObjectsWithTag("dirtTrack");
             notThis2 = GameObject.FindGameObjectsWithTag("roadTrack");
+            notThis3 = GameObject.FindGameObjectsWithTag("wetTrack");
         }
         
         foreach(GameObject trackObject in thisObject){
@@ -46,6 +56,11 @@ public class selectTrackType : MonoBehaviour
             //notThis2.GetComponent<GameObject>().SetActive(true);
         }
         foreach(GameObject trackObject in notThis2){
+            trackObject.GetComponent<Image>().enabled=false;
+            //notThis1.GetComponent<GameObject>().SetActive(true);
+            //notThis2.GetComponent<GameObject>().SetActive(true);
+        }
+        foreach(GameObject trackObject in notThis3){
             trackObject.GetComponent<Image>().enabled=false;
             //notThis1.GetComponent<GameObject>().SetActive(true);
             //notThis2.GetComponent<GameObject>().SetActive(true);
