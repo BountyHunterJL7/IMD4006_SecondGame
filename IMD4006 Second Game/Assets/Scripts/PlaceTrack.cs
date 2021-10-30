@@ -42,6 +42,7 @@ public class PlaceTrack : MonoBehaviour
 
     public int carSpawnNum=1;
     public int truckSpawnNum=1;
+    public bool startGridPlaced = false;
 
     public Vector3 smoothMousePos;
     [SerializeField] private int height;
@@ -214,7 +215,9 @@ public class PlaceTrack : MonoBehaviour
 
     public void OnMOuseClickOnUIStart(){
         if (onMousePrefab == null){
+            startGridPlaced = true;
             onMousePrefab = Instantiate(startTrack, mousePosition, Quaternion.identity);
+            
         }
     }
 

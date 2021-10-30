@@ -16,6 +16,7 @@ TagManager:
   - wetTrack
   - wet
   - terrain
+  - grid
   layers:
   - Default
   - TransparentFX

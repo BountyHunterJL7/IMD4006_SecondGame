@@ -112,8 +112,8 @@ public class enableWheelPhysicMaterial : MonoBehaviour
                     originalForwardStiffness=0.7f;
                     originalSidewaysStiffness=0.7f;
                 } else if(hit.collider.gameObject.tag=="dirt"){
-                    originalForwardStiffness=1.3f;
-                    originalSidewaysStiffness=1f;
+                    originalForwardStiffness=1.8f;
+                    originalSidewaysStiffness=1.6f;
                 } else if(hit.collider.gameObject.tag=="ice"){
                     originalForwardStiffness=2.5f;
                     originalSidewaysStiffness=2.5f;
