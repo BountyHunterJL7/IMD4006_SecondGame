@@ -44,7 +44,7 @@ public class enableWheelPhysicMaterial : MonoBehaviour
                 wheel.mass=20;
                 
                 if(hit.collider.gameObject.tag=="asphault"){
-                    originalForwardStiffness=1.2f;
+                    originalForwardStiffness=1.4f;
                     originalSidewaysStiffness=2f;
                 } else if(hit.collider.gameObject.tag=="dirt"){
                     originalForwardStiffness=0.9f;
@@ -60,8 +60,8 @@ public class enableWheelPhysicMaterial : MonoBehaviour
                 wheel.mass=25;
 
                 if(hit.collider.gameObject.tag=="asphault"){
-                    originalForwardStiffness=0.5f;
-                    originalSidewaysStiffness=0.3f;
+                    originalForwardStiffness=0.9f;
+                    originalSidewaysStiffness=0.9f;
                 } else if(hit.collider.gameObject.tag=="dirt"){
                     originalForwardStiffness=1.6f;
                     originalSidewaysStiffness=1f;
@@ -102,21 +102,21 @@ public class enableWheelPhysicMaterial : MonoBehaviour
                     originalForwardStiffness=1f;
                     originalSidewaysStiffness=0.8f;
                 } else if(hit.collider.gameObject.tag=="wet"){
-                    originalForwardStiffness=1.5f;
-                    originalSidewaysStiffness=1.3f;
+                    originalForwardStiffness=1.9f;
+                    originalSidewaysStiffness=1.9f;
                 }
             }  else if (studded){
                 wheel.mass=33;
                 
                 if(hit.collider.gameObject.tag=="asphault"){
-                    originalForwardStiffness=0.4f;
-                    originalSidewaysStiffness=0.2f;
+                    originalForwardStiffness=0.7f;
+                    originalSidewaysStiffness=0.7f;
                 } else if(hit.collider.gameObject.tag=="dirt"){
                     originalForwardStiffness=1.3f;
                     originalSidewaysStiffness=1f;
                 } else if(hit.collider.gameObject.tag=="ice"){
                     originalForwardStiffness=2.5f;
-                    originalSidewaysStiffness=1.8f;
+                    originalSidewaysStiffness=2.5f;
                 } else if(hit.collider.gameObject.tag=="wet"){
                     originalForwardStiffness=0.5f;
                     originalSidewaysStiffness=0.6f;

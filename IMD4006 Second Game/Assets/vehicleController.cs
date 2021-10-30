@@ -173,10 +173,10 @@ public class vehicleController : MonoBehaviour
     }
 
     private void PointFinder() {
-        if (Vector3.Distance(transform.position, points[currentPoint].position) < 7 && currentSpeed > 40){
+        if (Vector3.Distance(transform.position, points[currentPoint].position) < 12 && currentSpeed > 20){
             brake = true;
         }
-        else if (currentSpeed < 30){
+        else if (currentSpeed < 20){
             brake=false;
         }
         if (Vector3.Distance(transform.position, points[currentPoint].position) < 3){
