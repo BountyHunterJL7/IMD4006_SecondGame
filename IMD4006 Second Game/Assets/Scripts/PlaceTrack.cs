@@ -222,6 +222,13 @@ public class PlaceTrack : MonoBehaviour
     }
 
     public void OnMOuseClickOnUIcar(){
+        GameObject[] vehicles ;
+        vehicles = GameObject.FindGameObjectsWithTag("Vehicle");
+        foreach(GameObject vehicle in vehicles) {
+            if (vehicle.GetComponent<vehicleController>().pauseVehicle == false){
+                vehicle.GetComponent<vehicleController>().pauseVehicle=true;
+            } 
+         }
         if (carSpawnNum < 7){
                 onMousePrefab = Instantiate(car, GameObject.Find("spawn"+carSpawnNum).transform.position, Quaternion.identity);
                 carSpawnNum++;
@@ -231,6 +238,13 @@ public class PlaceTrack : MonoBehaviour
     }
 
     public void OnMOuseClickOnUItruck(){
+        GameObject[] vehicles ;
+        vehicles = GameObject.FindGameObjectsWithTag("Vehicle");
+        foreach(GameObject vehicle in vehicles) {
+            if (vehicle.GetComponent<vehicleController>().pauseVehicle == false){
+                vehicle.GetComponent<vehicleController>().pauseVehicle=true;
+            } 
+         }
         if(truckSpawnNum<7){
                 onMousePrefab = Instantiate(truck, GameObject.Find("truckSpawn"+truckSpawnNum).transform.position, Quaternion.identity);
                 truckSpawnNum++;

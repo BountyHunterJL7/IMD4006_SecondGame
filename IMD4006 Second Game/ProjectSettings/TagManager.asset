@@ -17,6 +17,9 @@ TagManager:
   - wet
   - terrain
   - grid
+  - tutorial
+  - snowTerrain
+  - waterTerrain
   layers:
   - Default
   - TransparentFX

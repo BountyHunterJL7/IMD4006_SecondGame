@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class terrainGen : MonoBehaviour
 {
-   public int depth = 0;
+   public float depth = 0;
    public int width = 65;
    public int height = 65;
    public int maxDepth = 2;
