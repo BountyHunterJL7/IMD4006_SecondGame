@@ -39,6 +39,9 @@ public class PlaceTrack : MonoBehaviour
 
     public Transform[] cars;
     public Transform[] trucks;
+
+    public AudioSource high;
+    public AudioSource low;
     
 
     public Transform onMousePrefab;
@@ -230,6 +233,8 @@ public class PlaceTrack : MonoBehaviour
         foreach(GameObject vehicle in vehicles) {
             if (vehicle.GetComponent<vehicleController>().pauseVehicle == false){
                 vehicle.GetComponent<vehicleController>().pauseVehicle=true;
+                high.volume=0;
+                low.volume=0.5f;
             } 
          }
         if (carSpawnNum < 7){
@@ -246,6 +251,8 @@ public class PlaceTrack : MonoBehaviour
         foreach(GameObject vehicle in vehicles) {
             if (vehicle.GetComponent<vehicleController>().pauseVehicle == false){
                 vehicle.GetComponent<vehicleController>().pauseVehicle=true;
+                high.volume=0;
+                low.volume=0.5f;
             } 
          }
         if(truckSpawnNum<7){
