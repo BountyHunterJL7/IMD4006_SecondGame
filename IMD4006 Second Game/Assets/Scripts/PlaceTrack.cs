@@ -36,6 +36,9 @@ public class PlaceTrack : MonoBehaviour
     public Transform startTrack;
     public Transform car;
     public Transform truck;
+
+    public Transform[] cars;
+    public Transform[] trucks;
     
 
     public Transform onMousePrefab;
@@ -230,7 +233,7 @@ public class PlaceTrack : MonoBehaviour
             } 
          }
         if (carSpawnNum < 7){
-                onMousePrefab = Instantiate(car, GameObject.Find("spawn"+carSpawnNum).transform.position, Quaternion.identity);
+                onMousePrefab = Instantiate(cars[carSpawnNum-1], GameObject.Find("spawn"+carSpawnNum).transform.position, Quaternion.identity);
                 carSpawnNum++;
                 onMousePrefab = null;
         }
@@ -246,7 +249,7 @@ public class PlaceTrack : MonoBehaviour
             } 
          }
         if(truckSpawnNum<7){
-                onMousePrefab = Instantiate(truck, GameObject.Find("truckSpawn"+truckSpawnNum).transform.position, Quaternion.identity);
+                onMousePrefab = Instantiate(trucks[truckSpawnNum-1], GameObject.Find("truckSpawn"+truckSpawnNum).transform.position, Quaternion.identity);
                 truckSpawnNum++;
                 onMousePrefab = null;
         }
@@ -260,7 +263,7 @@ public class PlaceTrack : MonoBehaviour
 
             for (int i = 0; i < width; i++){
                 for (int j = 0; j< height; j++){
-                    Vector3 worldPos = new Vector3(i*65f, 0, j*65f);
+                    Vector3 worldPos = new Vector3(-195 + i*65f, 0, -195 + j*65f);
                     Transform obj = Instantiate(gridCellPrefab,worldPos, Quaternion.identity);
                     obj.name = "Cell" + name;
                     nodes[i,j] = new Node(isPlaceable:true, worldPos,obj);

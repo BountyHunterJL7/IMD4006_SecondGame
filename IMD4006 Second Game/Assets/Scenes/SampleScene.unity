@@ -3964,6 +3964,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4036,6 +4037,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 66, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439a96f2f6871be4a9eede8de03ebc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panSpeed: 150
+  panBorder: 10
+  cameraLimit: {x: 200, y: 200}
 --- !u!1 &993735520
 GameObject:
   m_ObjectHideFlags: 0
@@ -7340,6 +7356,20 @@ MonoBehaviour:
   startTrack: {fileID: 895938006074855350, guid: f61965ad26187764a945c2c88ccad618, type: 3}
   car: {fileID: 3702187378544987487, guid: d83242c66d96db04bac4e2ab7db14cb9, type: 3}
   truck: {fileID: 5410747083321906178, guid: ceee8990092b9f540be0dd5519d3a777, type: 3}
+  cars:
+  - {fileID: 3702187378544987487, guid: d83242c66d96db04bac4e2ab7db14cb9, type: 3}
+  - {fileID: 3702187378544987487, guid: 9f46759efc117404ab3a949f7ff9bba8, type: 3}
+  - {fileID: 3702187378544987487, guid: c57c3a1eea0f1934e902d097cb368ee2, type: 3}
+  - {fileID: 3702187378544987487, guid: 0143f163b25284c46a5a3a2e7354be83, type: 3}
+  - {fileID: 3702187378544987487, guid: 7ebcd83bb6c4f9747b6b5b58f092b291, type: 3}
+  - {fileID: 3702187378544987487, guid: 4e95a9905d7e8304fadf2728cc65048f, type: 3}
+  trucks:
+  - {fileID: 5410747083321906178, guid: ceee8990092b9f540be0dd5519d3a777, type: 3}
+  - {fileID: 5410747083321906178, guid: c5babdb22e31ef5479ffe52d083e565e, type: 3}
+  - {fileID: 5410747083321906178, guid: 72f02630ce095494588467949be9726f, type: 3}
+  - {fileID: 5410747083321906178, guid: c67e66f2554098944975afc9ce09d9f6, type: 3}
+  - {fileID: 5410747083321906178, guid: e6094385cb08d2443a0036860f374f5e, type: 3}
+  - {fileID: 5410747083321906178, guid: fb6c5950f4db7b842a4a63f60eba4a03, type: 3}
   onMousePrefab: {fileID: 0}
   carSpawnNum: 1
   truckSpawnNum: 1
@@ -7368,7 +7398,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090176125}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7418,7 +7448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090176125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -250, y: 0, z: -250}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
