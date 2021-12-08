@@ -20,6 +20,15 @@ TagManager:
   - tutorial
   - snowTerrain
   - waterTerrain
+  - FLS
+  - FRS
+  - RRS
+  - RLS
+  - wall
+  - carBody
+  - startUI
+  - trackUI
+  - startText
   layers:
   - Default
   - TransparentFX

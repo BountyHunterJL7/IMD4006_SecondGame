@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlaceTrack : MonoBehaviour
 {
@@ -41,8 +42,14 @@ public class PlaceTrack : MonoBehaviour
     public Transform[] trucks;
 
     public AudioSource high;
-    public AudioSource low;
-    
+    public AudioSource low;  
+    public AudioSource vehicle1;
+    public AudioSource vehicle2;
+    public AudioSource vehicle3;
+    public AudioSource vehicle4;
+    public AudioSource vehicle5;
+    public AudioSource vehicle6;
+    public AudioSource vehicle7;  
 
     public Transform onMousePrefab;
 
@@ -82,6 +89,9 @@ public class PlaceTrack : MonoBehaviour
             foreach (var node in nodes){
                 if ((node.cellPos.x <= mousePosition.x +7 && node.cellPos.x >= mousePosition.x -7) && (node.cellPos.z >= mousePosition.z -7 && node.cellPos.z <= mousePosition.z +7) && node.isPlaceable){
                     if (Input.GetMouseButtonUp(0) && onMousePrefab !=null){
+                        if (EventSystem.current.IsPointerOverGameObject()){
+                            return;
+                        }
                         node.isPlaceable = false;
                         onMousePrefab.GetComponent<ObjFollowMouse>().onGrid = true;
                         onMousePrefab.position = node.cellPos + new Vector3(0, 0.5f, 0);
@@ -223,11 +233,25 @@ public class PlaceTrack : MonoBehaviour
         if (onMousePrefab == null){
             startGridPlaced = true;
             onMousePrefab = Instantiate(startTrack, mousePosition, Quaternion.identity);
-            
+
+            GameObject[] startUI ;
+            startUI = GameObject.FindGameObjectsWithTag("startUI");
+            foreach(GameObject text in startUI) {
+                if (text.activeInHierarchy == true){
+                    text.SetActive(false);
+                }
+            }
         }
     }
 
     public void OnMOuseClickOnUIcar(){
+        GameObject[] startText ;
+            startText = GameObject.FindGameObjectsWithTag("startText");
+            foreach(GameObject text in startText) {
+                if (text.activeInHierarchy == true){
+                    text.SetActive(false);
+                }
+            }
         GameObject[] vehicles ;
         vehicles = GameObject.FindGameObjectsWithTag("Vehicle");
         foreach(GameObject vehicle in vehicles) {
@@ -235,6 +259,13 @@ public class PlaceTrack : MonoBehaviour
                 vehicle.GetComponent<vehicleController>().pauseVehicle=true;
                 high.volume=0;
                 low.volume=0.5f;
+                vehicle1.volume = 0;
+                vehicle2.volume = 0;
+                vehicle3.volume = 0;
+                vehicle4.volume = 0;
+                vehicle5.volume = 0;
+                vehicle6.volume = 0;
+                vehicle7.volume = 0;
             } 
          }
         if (carSpawnNum < 7){
@@ -246,6 +277,13 @@ public class PlaceTrack : MonoBehaviour
     }
 
     public void OnMOuseClickOnUItruck(){
+        GameObject[] startText ;
+            startText = GameObject.FindGameObjectsWithTag("startText");
+            foreach(GameObject text in startText) {
+                if (text.activeInHierarchy == true){
+                    text.SetActive(false);
+                }
+            }
         GameObject[] vehicles ;
         vehicles = GameObject.FindGameObjectsWithTag("Vehicle");
         foreach(GameObject vehicle in vehicles) {
@@ -253,6 +291,13 @@ public class PlaceTrack : MonoBehaviour
                 vehicle.GetComponent<vehicleController>().pauseVehicle=true;
                 high.volume=0;
                 low.volume=0.5f;
+                vehicle1.volume = 0;
+                vehicle2.volume = 0;
+                vehicle3.volume = 0;
+                vehicle4.volume = 0;
+                vehicle5.volume = 0;
+                vehicle6.volume = 0;
+                vehicle7.volume = 0;
             } 
          }
         if(truckSpawnNum<7){

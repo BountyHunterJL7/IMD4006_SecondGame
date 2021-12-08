@@ -19,9 +19,7 @@ public class roadPerameters : MonoBehaviour
         GameObject[] terrainType;       
         terrainType = GameObject.FindGameObjectsWithTag("dirtTrack");
 
-        if (terrainSlider.name == "dirtHardness"){
-            terrainType = GameObject.FindGameObjectsWithTag("dirt");
-        } else if (terrainSlider.name == "snowCover"){
+         if (terrainSlider.name == "snowCover"){
             terrainType = GameObject.FindGameObjectsWithTag("ice");
         } else if (terrainSlider.name == "wetness"){
             terrainType = GameObject.FindGameObjectsWithTag("wet");

@@ -13,13 +13,16 @@ public class selectTrackType : MonoBehaviour
         GameObject[] notThis1;
         GameObject[] notThis2;
         GameObject[] notThis3;
+
+        GameObject[] trackUI ;
+            
         
         GameObject gridPlaced;
     void Start()
     {
         Button btn = yourButton.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-        
+        trackUI = GameObject.FindGameObjectsWithTag("trackUI");
         gridPlaced = GameObject.FindGameObjectWithTag("grid");
 
         
@@ -64,21 +67,41 @@ public class selectTrackType : MonoBehaviour
                 notThis1 = GameObject.FindGameObjectsWithTag("dirtTrack");
                 notThis2 = GameObject.FindGameObjectsWithTag("iceTrack");
                 notThis3 = GameObject.FindGameObjectsWithTag("wetTrack");
+                foreach(GameObject text in trackUI) {
+                    if (text.activeInHierarchy == true){
+                        text.SetActive(false);
+                    }
+                }
             } else if (yourButton.name == "wetButton"){
                 thisObject = GameObject.FindGameObjectsWithTag("wetTrack");
                 notThis1 = GameObject.FindGameObjectsWithTag("roadTrack");
                 notThis2 = GameObject.FindGameObjectsWithTag("iceTrack");
                 notThis3 = GameObject.FindGameObjectsWithTag("dirtTrack");
+                foreach(GameObject text in trackUI) {
+                    if (text.activeInHierarchy == true){
+                        text.SetActive(false);
+                    }
+                }
             } else if (yourButton.name == "dirtButton"){
                 thisObject = GameObject.FindGameObjectsWithTag("dirtTrack");
                 notThis1 = GameObject.FindGameObjectsWithTag("roadTrack");
                 notThis2 = GameObject.FindGameObjectsWithTag("iceTrack");
                 notThis3 = GameObject.FindGameObjectsWithTag("wetTrack");
+                foreach(GameObject text in trackUI) {
+                    if (text.activeInHierarchy == true){
+                        text.SetActive(false);
+                    }
+                }
             } else if (yourButton.name == "iceButton"){
                 thisObject = GameObject.FindGameObjectsWithTag("iceTrack");
                 notThis1 = GameObject.FindGameObjectsWithTag("dirtTrack");
                 notThis2 = GameObject.FindGameObjectsWithTag("roadTrack");
                 notThis3 = GameObject.FindGameObjectsWithTag("wetTrack");
+                foreach(GameObject text in trackUI) {
+                    if (text.activeInHierarchy == true){
+                        text.SetActive(false);
+                    }
+                }
             }
             
             foreach(GameObject trackObject in thisObject){
