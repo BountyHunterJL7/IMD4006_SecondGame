@@ -18,6 +18,8 @@ public class pauseButton : MonoBehaviour
     public AudioSource vehicle6;
     public AudioSource vehicle7;
 
+    //public bool allHaveGone = false;
+
     private bool firstStart = false;
     //vehicleController[] vehicles;
     // Start is called before the first frame update
@@ -55,6 +57,7 @@ public class pauseButton : MonoBehaviour
                 vehicle1.volume = 0.2f;
             }
         }
+        //allHaveGone = true;
     }
         
     void TaskOnClick(){
@@ -72,6 +75,7 @@ public class pauseButton : MonoBehaviour
             StartCoroutine(ExampleCoroutine(vehicles));
         } else {
             foreach(GameObject vehicle in vehicles) {
+            //if (allHaveGone==true){
             if (vehicle.GetComponent<vehicleController>().pauseVehicle == true){
                 vehicle.GetComponent<vehicleController>().pauseVehicle=false;                
                 high.volume = 0.5f;
@@ -105,6 +109,7 @@ public class pauseButton : MonoBehaviour
                 vehicle7.volume = 0;
 
             }
+            //}
          }
         }
         

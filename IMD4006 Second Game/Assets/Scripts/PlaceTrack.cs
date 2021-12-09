@@ -254,7 +254,12 @@ public class PlaceTrack : MonoBehaviour
             }
         GameObject[] vehicles ;
         vehicles = GameObject.FindGameObjectsWithTag("Vehicle");
+        //GameObject allCheck = GameObject.Find("PauseButton");
         foreach(GameObject vehicle in vehicles) {
+            // if (vehicles[0].GetComponent<vehicleController>().pauseVehicle == false && allCheck.GetComponent<pauseButton>().allHaveGone==false){
+            //     vehicle.GetComponent<vehicleController>().pauseVehicle = false;
+            //     return;
+            // }
             if (vehicle.GetComponent<vehicleController>().pauseVehicle == false){
                 vehicle.GetComponent<vehicleController>().pauseVehicle=true;
                 high.volume=0;
@@ -286,8 +291,14 @@ public class PlaceTrack : MonoBehaviour
             }
         GameObject[] vehicles ;
         vehicles = GameObject.FindGameObjectsWithTag("Vehicle");
+        //GameObject allCheck = GameObject.Find("PauseButton");
         foreach(GameObject vehicle in vehicles) {
+            // if (vehicles[0].GetComponent<vehicleController>().pauseVehicle == false && allCheck.GetComponent<pauseButton>().allHaveGone==false){
+            //     vehicle.GetComponent<vehicleController>().pauseVehicle = false;
+            //     return;
+            // }
             if (vehicle.GetComponent<vehicleController>().pauseVehicle == false){
+                
                 vehicle.GetComponent<vehicleController>().pauseVehicle=true;
                 high.volume=0;
                 low.volume=0.5f;
@@ -298,7 +309,7 @@ public class PlaceTrack : MonoBehaviour
                 vehicle5.volume = 0;
                 vehicle6.volume = 0;
                 vehicle7.volume = 0;
-            } 
+            }
          }
         if(truckSpawnNum<7){
                 onMousePrefab = Instantiate(trucks[truckSpawnNum-1], GameObject.Find("truckSpawn"+truckSpawnNum).transform.position, Quaternion.identity);

@@ -49,11 +49,11 @@ public class SparkCheck : MonoBehaviour
     void OnTriggerExit(Collider col)
     {
         spark.GetComponent<ParticleSystem>().Stop();
-        oof1.GetComponent<ParticleSystem>().Stop();
-        oof2.GetComponent<ParticleSystem>().Stop();
-        oof3.GetComponent<ParticleSystem>().Stop();
-        oof4.GetComponent<ParticleSystem>().Stop();
-        oof5.GetComponent<ParticleSystem>().Stop();
+        // oof1.GetComponent<ParticleSystem>().Stop();
+        // oof2.GetComponent<ParticleSystem>().Stop();
+        // oof3.GetComponent<ParticleSystem>().Stop();
+        // oof4.GetComponent<ParticleSystem>().Stop();
+        // oof5.GetComponent<ParticleSystem>().Stop();
         // if (col.gameObject.tag == "wall" || col.gameObject.tag == "carBody"){
             
         // }
